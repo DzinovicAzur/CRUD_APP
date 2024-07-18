@@ -1,11 +1,12 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/user-rout");
+var cors = require("cors");
 
 
-
+app.use(cors());
 app.use(express.json());
 app.get('/', (req, res) => {
     res.send('Running!')
@@ -13,7 +14,7 @@ app.get('/', (req, res) => {
 
 app.use(userRoutes);
 
-//add i get su bili ovjde
+
 
 async function connectDb() {
     await mongoose.connect("mongodb://localhost:27017", {
