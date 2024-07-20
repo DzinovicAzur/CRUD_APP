@@ -17,7 +17,7 @@ async function getUsers() {
 
 async function getUser(id) {
     const user = await User.findById(id);
-    return user.to0bject();
+    return user.toObject();
 }
 
 async function updateUser(id, userModel) {
